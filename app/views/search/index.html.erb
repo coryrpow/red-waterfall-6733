@@ -6,16 +6,16 @@
 <% @population.each do |character| %>
   <ul class="character">
     <p>Name: <%= character.name %></p>
-    <%= image_tag character.photo_url %>
-    <% character.allies.each do |ally| %>
+    <img src="<%= character.photo_url %>" alt="nil">
+
     <p>Allies: </p>
-      <li><%= ally %></li>
-    <% end %>
-    <% character.enemies.each do |enemy| %>
-      <p>Enemies:</p> 
-        <li><%= enemy %></li>
+      <% character.allies.each do |ally| %>
+        <li><%= ally %></li>
+      <% end %>
+    <p>Enemies:</p> 
+      <% character.enemies.each do |enemy| %>
+          <li><%= enemy %></li>
       <% end %>
     <p>Affiliations: <%= character.affiliation %></p><br>
-
     <% end %>
   </ul>

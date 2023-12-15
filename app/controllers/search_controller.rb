@@ -1,8 +1,8 @@
 class SearchController < ApplicationController
   def index
-    @search = facade.nation_search(params[:search])
-    @population = facade.first_25(params[:search])
     # require 'pry';binding.pry
+    @search = facade.nation_search(params[:nation])
+    @population = facade.first_25(params[:nation])
   end
 
 
