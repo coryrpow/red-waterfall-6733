@@ -4,7 +4,6 @@ RSpec.describe 'Characterse index page', type: :feature do
   describe "when I visit /" do
     it "I see all characters listed with their attributes" do
       visit '/'      
-      # has_select?('Locale', with_options: ['Fire Nation'])
      
       # select('Air Nomads', from: 'nation')
       select('Fire Nation', from: 'nation')
@@ -16,13 +15,13 @@ RSpec.describe 'Characterse index page', type: :feature do
 
       expect(current_path).to eq(search_path)
 
-      expect(page).to have_content("Population Total: 396")
+      expect(page).to have_content("Population Total: 97")
       # save_and_open_page
       within(first(".character")) do
-        expect(page).to have_content("Name: Arik")
+        expect(page).to have_content("Name: Azula")
         expect(page).to have_content("Allies:\nHis")
-        expect(page).to have_content("Enemies:\nKorra")
-        expect(page).to have_content("Affiliations: Earth Kingdom Air Force")
+        expect(page).to have_content("Enemies:\nIroh Zuko Kuei Long Feng Mai Ty Lee Ursa")
+        expect(page).to have_content("Affiliations: Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
       end
   
     end
