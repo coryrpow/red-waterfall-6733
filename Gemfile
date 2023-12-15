@@ -57,9 +57,9 @@ group :development, :test do
 end
 
 group :test do
-  gem "rspec-rails"
   gem "capybara"
   gem "launchy"
+  gem "rspec-rails"
   gem "simplecov"
   # gem "webmock"
   # gem "vcr"
