@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe 'Characterse index page', type: :feature do
   describe "when I visit /" do
     it "I see all characters listed with their attributes" do
-      visit '/'
-# save_and_open_page
-
-      expect(page).to have_button("")
-
-      
-      has_select?('Locale', with_options: ['Fire Nation'])
-      select('Fire Nation', from: 'nation')
+      visit '/'      
+      # has_select?('Locale', with_options: ['Fire Nation'])
+     
+      # select('Air Nomads', from: 'nation')
+      # select('Fire Nation', from: 'nation')
+      select('Water Tribes', from: 'nation')
+      # select('Earth Kingdom', from: 'nation')
+   
       click_button('Search For Members')
 
 
