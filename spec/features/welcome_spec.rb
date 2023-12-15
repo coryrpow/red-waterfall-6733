@@ -7,8 +7,8 @@ RSpec.describe 'Characterse index page', type: :feature do
       # has_select?('Locale', with_options: ['Fire Nation'])
      
       # select('Air Nomads', from: 'nation')
-      # select('Fire Nation', from: 'nation')
-      select('Water Tribes', from: 'nation')
+      select('Fire Nation', from: 'nation')
+      # select('Water Tribes', from: 'nation')
       # select('Earth Kingdom', from: 'nation')
    
       click_button('Search For Members')
@@ -16,8 +16,14 @@ RSpec.describe 'Characterse index page', type: :feature do
 
       expect(current_path).to eq(search_path)
 
-      expect(page).to have_content("Population Total: 20")
-      expect(page).to have_content("Population Total: 20")
+      expect(page).to have_content("Population Total: 396")
+      # save_and_open_page
+      within(first(".character")) do
+        expect(page).to have_content("Name: Arik")
+        expect(page).to have_content("Allies:\nHis")
+        expect(page).to have_content("Enemies:\nKorra")
+        expect(page).to have_content("Affiliations: Earth Kingdom Air Force")
+      end
   
     end
   end

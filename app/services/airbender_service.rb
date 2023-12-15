@@ -4,7 +4,8 @@ class AirbenderService
   end
 
   def nation_search(search)
-    get_url("/api/v1/characters?affiliation=#{search}&perPage=500")
+    # require 'pry';binding.pry
+    get_url("/api/v1/characters?affiliation=#{search}&perPage=400")
   end
 
   def get_url(url)

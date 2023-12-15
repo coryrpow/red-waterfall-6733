@@ -12,7 +12,15 @@ class AirbenderFacade
     json.map do |character|
       Character.new(character)
     end
-    require 'pry';binding.pry
+    # require 'pry';binding.pry
+  end
+
+  def first_25(search)
+    json = service.nation_search(search)
+    json.map do |character|
+      Character.new(character)
+    end.first(25)
+    # require 'pry';binding.pry
   end
 
 
