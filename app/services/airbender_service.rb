@@ -4,7 +4,7 @@ class AirbenderService
   end
 
   def nation_search(search)
-    get_url("/api/v1/characters?affiliation=#{search}")
+    get_url("/api/v1/characters?affiliation=#{search}&perPage=500")
   end
 
   def get_url(url)

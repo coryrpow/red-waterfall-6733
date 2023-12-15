@@ -9,10 +9,10 @@ class AirbenderFacade
 
   def nation_search(search)
     json = service.nation_search(search)
-require 'pry';binding.pry
     json.map do |character|
       Character.new(character)
-    end.first(25)
+    end
+    require 'pry';binding.pry
   end
 
 
