@@ -12,6 +12,12 @@ RSpec.describe 'Characterse index page', type: :feature do
       has_select?('Locale', with_options: ['Fire Nation'])
       select('Fire Nation', from: 'nation')
       click_button('Search For Members')
+
+
+      expect(current_path).to eq(search_path)
+
+      expect(page).to have_content("Population Total: 20")
+      expect(page).to have_content("Population Total: 20")
   
     end
   end
